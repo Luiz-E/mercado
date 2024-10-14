@@ -18,8 +18,6 @@ public class Produto {
     @Column(name="descricao")
     private String descricao;
 
-//    @ManyToMany(mappedBy = "produtos")
-//    private Set<Lote> lotes;
     @OneToMany(mappedBy = "produto")
     private Set<LoteProduto> loteProdutos;
 
@@ -35,6 +33,14 @@ public class Produto {
 
     public String getDescricao() {
         return descricao;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
     }
 
     @Override
