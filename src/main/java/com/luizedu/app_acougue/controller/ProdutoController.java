@@ -6,12 +6,20 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/produto")
 public class ProdutoController {
 
     @Autowired
     ProdutoService produtoService;
+
+    @GetMapping("listar")
+    public ResponseEntity<List<Produto>> listar() {
+        List<Produto> lista = produtoService.listar();
+        return ResponseEntity.ok(lista);
+    }
 
     @PostMapping("/criarProduto")
     public ResponseEntity<Produto> salvar(@RequestBody Produto produto) {

@@ -6,7 +6,7 @@ import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Optional;
+import java.util.List;
 
 @Service
 public class ProdutoService {
@@ -14,7 +14,9 @@ public class ProdutoService {
     @Autowired
     ProdutoRepository produtoRepository;
 
-
+    public List<Produto> listar() {
+        return produtoRepository.findAll();
+    }
 
     public Produto salvar(Produto produto) {
         return produtoRepository.save(produto);
