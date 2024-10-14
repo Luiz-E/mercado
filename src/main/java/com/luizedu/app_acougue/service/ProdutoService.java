@@ -31,4 +31,11 @@ public class ProdutoService {
         return produtoRepository.save(produtoExistente);
     }
 
+    public void deletar(Long produtoId) {
+        produtoRepository
+                .findById(produtoId)
+                .orElseThrow(() -> new EntityNotFoundException("Produto não encontrado."));
+        produtoRepository.deleteById(produtoId);
+    }
+
 }

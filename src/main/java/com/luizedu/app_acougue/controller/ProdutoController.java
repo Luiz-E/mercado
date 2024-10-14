@@ -21,15 +21,21 @@ public class ProdutoController {
         return ResponseEntity.ok(lista);
     }
 
-    @PostMapping("/criarProduto")
+    @PostMapping("/salvar")
     public ResponseEntity<Produto> salvar(@RequestBody Produto produto) {
         Produto novoProduto = produtoService.salvar(produto);
         return ResponseEntity.ok(novoProduto);
     }
 
-    @PutMapping("/update/{produtoId}")
+    @PutMapping("/atualizar/{produtoId}")
     public ResponseEntity<Produto> atualizar(@PathVariable Long produtoId, @RequestBody Produto produtoNovo) {
         Produto produtoAtualizado = produtoService.atualizar(produtoId, produtoNovo);
         return ResponseEntity.ok(produtoAtualizado);
+    }
+
+    @DeleteMapping("/deletar/{produtoId}")
+    public ResponseEntity<Void> deletar(@PathVariable Long produtoId) {
+        produtoService.deletar(produtoId);
+        return ResponseEntity.noContent().build();
     }
 }
