@@ -35,3 +35,10 @@ build/
 /mvnw
 /mvnw.cmd
 /src/main/resources/.env
+/src/main/resources/static/favicon.ico
+/src/main/resources/static/index/index.html
+/src/main/resources/static/salvar/index.html
+/src/main/resources/static/index.html
+/src/main/resources/static/main-ASB3YK5C.js
+/src/main/resources/static/polyfills-FFHMD2TL.js
+/src/main/resources/static/styles-5INURTSO.css

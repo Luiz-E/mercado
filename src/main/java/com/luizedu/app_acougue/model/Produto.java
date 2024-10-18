@@ -2,7 +2,6 @@ package com.luizedu.app_acougue.model;
 
 import jakarta.persistence.*;
 
-import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
@@ -17,6 +16,9 @@ public class Produto {
 
     @Column(name="descricao")
     private String descricao;
+
+    @Column(name="codigo")
+    private String codigoBarras;
 
     @OneToMany(mappedBy = "produto")
     private Set<LoteProduto> loteProdutos;
@@ -43,6 +45,14 @@ public class Produto {
         this.descricao = descricao;
     }
 
+    public String getCodigoBarras() {
+        return codigoBarras;
+    }
+
+    public void setCodigoBarras(String codigoBarras) {
+        this.codigoBarras = codigoBarras;
+    }
+
     @Override
     public boolean equals(Object object) {
         if (this == object) return true;
@@ -54,5 +64,14 @@ public class Produto {
     @Override
     public int hashCode() {
         return Objects.hash(id, descricao);
+    }
+
+    @Override
+    public String toString() {
+        return "Produto{" +
+                "codigoBarras='" + codigoBarras + '\'' +
+                ", descricao='" + descricao + '\'' +
+                ", id=" + id +
+                '}';
     }
 }

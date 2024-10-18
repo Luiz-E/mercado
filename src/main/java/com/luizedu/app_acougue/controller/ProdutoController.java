@@ -10,6 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/produto")
+@CrossOrigin(origins = {"http://localhost:5555", "http://10.1.1.38:5555"}, allowedHeaders = "*", allowCredentials = "true")
 public class ProdutoController {
 
     @Autowired
@@ -23,6 +24,7 @@ public class ProdutoController {
 
     @PostMapping("/salvar")
     public ResponseEntity<Produto> salvar(@RequestBody Produto produto) {
+        System.out.println(produto);
         Produto novoProduto = produtoService.salvar(produto);
         return ResponseEntity.ok(novoProduto);
     }
@@ -30,6 +32,8 @@ public class ProdutoController {
     @PutMapping("/atualizar/{produtoId}")
     public ResponseEntity<Produto> atualizar(@PathVariable Long produtoId, @RequestBody Produto produtoNovo) {
         Produto produtoAtualizado = produtoService.atualizar(produtoId, produtoNovo);
+        System.out.println(produtoNovo);
+        System.out.println(produtoAtualizado);
         return ResponseEntity.ok(produtoAtualizado);
     }
 

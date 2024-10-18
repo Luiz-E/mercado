@@ -19,6 +19,7 @@ public class ProdutoService {
     }
 
     public Produto salvar(Produto produto) {
+        System.out.println(produto);
         return produtoRepository.save(produto);
     }
 
@@ -28,6 +29,7 @@ public class ProdutoService {
                 .orElseThrow(() -> new EntityNotFoundException("Produto não encontrado."));
 
         produtoExistente.setDescricao(produto.getDescricao());
+        produtoExistente.setCodigoBarras(produto.getCodigoBarras());
         return produtoRepository.save(produtoExistente);
     }
 
