@@ -1,4 +1,4 @@
-package com.luizedu.app_acougue.ccnfig;
+package com.luizedu.mercado.ccnfig;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;

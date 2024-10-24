@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.luizedu</groupId>
-	<artifactId>app-acougue</artifactId>
+	<artifactId>app-mercado</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>app-acougue</name>
-	<description>Aplicativo para controle de etiquetas do açougue</description>
+	<name>app-mercado</name>
+	<description>Aplicativo para apoio em diversos setores.</description>
 	<url/>
 	<licenses>
 		<license/>

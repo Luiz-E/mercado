@@ -1,4 +1,4 @@
-package com.luizedu.app_acougue.model;
+package com.luizedu.mercado.model;
 
 import jakarta.persistence.*;
 

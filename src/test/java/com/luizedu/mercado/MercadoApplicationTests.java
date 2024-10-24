@@ -1,10 +1,10 @@
-package com.luizedu.app_acougue;
+package com.luizedu.mercado;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class AppAcougueApplicationTests {
+class MercadoApplicationTests {
 
 	@Test
 	void contextLoads() {

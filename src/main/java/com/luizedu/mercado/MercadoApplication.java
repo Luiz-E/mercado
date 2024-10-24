@@ -1,13 +1,13 @@
-package com.luizedu.app_acougue;
+package com.luizedu.mercado;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class AppAcougueApplication {
+public class MercadoApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(AppAcougueApplication.class, args);
+		SpringApplication.run(MercadoApplication.class, args);
 	}
 
 }
