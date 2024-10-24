@@ -1,0 +1,20 @@
+<app-header></app-header>
+<div *ngFor="let validade of data" class="container mt-4">
+    <h3 class="text-center">{{validade.dataFormatada}}</h3>
+    <div class="list-group w-100">
+        <div *ngFor="let produto of validade.produtos" class="list-group-item">
+            <div class="row w-100">
+                <div class="mt-4 col-12 col-md-4 text-center">
+                    {{produto.codigoBarras}}
+                </div>
+                <div class="mt-4 col-12 col-md-4 text-center">
+                    {{produto.descricao}}
+                </div>
+                <div class="mt-4 mb-2 col-12 col-md-4 text-center">
+                    <button class="w-50 btn btn-danger" (click)="confirmarExclusao(validade.data, produto.codigoBarras)">Excluir</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<app-remover-lista-popup *ngIf="deletarPopup" (fecha)="esconderPopup()" (apaga)="removerDaLista()"></app-remover-lista-popup>

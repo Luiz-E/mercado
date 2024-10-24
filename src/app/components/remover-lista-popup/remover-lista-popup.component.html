@@ -1,0 +1,7 @@
+<div class="popup-overlay" (click)="remover()">
+    <div class="popup-content" (click)="$event.stopPropagation()">
+        <p>Deseja mesmo excluir?</p>
+        <button (click)="fechar()">Cancelar</button>
+        <button (click)="remover()">Excluir</button>
+    </div>
+</div>

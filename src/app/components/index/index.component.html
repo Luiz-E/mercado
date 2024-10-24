@@ -1,0 +1,25 @@
+<app-header></app-header>
+<div class="container mt-4">
+    <div class="d-flex justify-content-center">
+        <div class="list-group w-100">
+            <div *ngFor="let produto of data" class="list-group-item" >
+                <div class="row w-100">
+                    <div class="mt-4 col-12 col-md-3 text-center">
+                        {{produto.codigoBarras}}
+                    </div>
+                    <div class="mt-4 col-12 col-md-3 text-center">
+                        {{produto.descricao}}
+                    </div>
+                    <div class="mt-4 col-12 col-md-3 text-center" >
+                        <a class="w-50 btn btn-warning" [routerLink]="['/atualizar', produto.id]">Atualizar</a>
+                    </div>
+                    <div class="mt-4 mb-2 col-12 col-md-3 text-center">
+                        <button class="w-50 btn btn-danger" (click)="confirmarExclusao(produto.id)">Excluir</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<app-excluir-popup *ngIf="deletarPopup" (close)="esconderPopup()" (delete)="excluirProduto()"></app-excluir-popup>
+<app-excluir-cadeia-popup *ngIf="excluirDatas" (close)="esconderPopup()" (delete)="excluirTodos()"></app-excluir-cadeia-popup>

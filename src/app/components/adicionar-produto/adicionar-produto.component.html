@@ -1,0 +1,47 @@
+<app-header></app-header>
+<div class="container">
+    <form class="container mt-4" (ngSubmit)="onSubmit()" #form="ngForm">
+        <div class="mb-3">
+            <label class="form-label" for="codigoBarras">Código:</label>
+            <input class="form-control" type="text" id="id" [(ngModel)]="vencimento.codigoBarra" name="codigoBarras" required>
+        </div>
+        <div *ngIf="erro.mensagem" class="mb-3">
+            <label class="form-label" for="descricao">Descrição:</label>
+            <input class="form-control" type="text" id="descricao" [(ngModel)]="descricao" name="descricao">
+        </div>
+        <div class="form-check mb-3">
+            <label class="form-check-label" for="dataIncompleta">Somente mês:</label>
+            <input class="form-check-input" type="checkbox" id="dataIncompleta" [(ngModel)]="vencimento.dataIncompleta" name="dataIncompleta">
+        </div>
+        <div *ngIf="!vencimento.dataIncompleta" class="mb-3">
+            <label class="form-check-label mb-2" for="dataVencimento">Vencimento:</label>
+            <input class="form-control"  type="date" id="dataVencimento" [(ngModel)]="vencimento.data" name="dataVencimento">
+        </div>
+        <div *ngIf="vencimento.dataIncompleta" class="mb-3 row">
+            <div class="w-25 row">
+                <div class="col-auto">
+                    <label class="form-label" for="mes">Mês:</label>
+                </div>
+                <div class="col-auto">
+                    <select [(ngModel)]="vencimento.mes" name="mes" id="mes" class="form-select">
+                        <option *ngFor="let mes of [{ id: 0, mes: 'Janeiro' }, { id: 1, mes: 'Fevereiro' }, { id: 2, mes: 'Março' }, { id: 3, mes: 'Abril' }, { id: 4, mes: 'Maio' }, { id: 5, mes: 'Junho' }, { id: 6, mes: 'Julho' }, { id: 7, mes: 'Agosto' }, { id: 8, mes: 'Setembro' }, { id: 9, mes: 'Outubro' }, { id: 10, mes: 'Novembro' }, { id: 11, mes: 'Dezembro' }]" [value]="mes.id">{{ mes.mes }}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="w-50 row">
+                <div class="col-auto">
+                    <label class="form-label" for="ano">Ano:</label>
+                </div>
+                <div class="col-auto">
+                    <input class="form-control" type="text" id="ano" [(ngModel)]="vencimento.ano" name="ano">
+                </div>
+            </div>
+        </div>
+        <div>
+            <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Adicionar</button>
+        </div>
+    </form>
+</div>
+<div *ngIf="erro.mensagem" class="alert alert-danger container mt-4">
+    {{ erro.mensagem }}
+</div>

@@ -1,0 +1,7 @@
+<div class="popup-overlay" (click)="cancelar()">
+    <div class="popup-content" (click)="$event.stopPropagation()">
+        <p>Existem registros de vencimentos com esse produto. Excluí-lo irá apagar todos esses registros. Deseja mesmo excluir?</p>
+        <button (click)="cancelar()">Cancelar</button>
+        <button (click)="excluir()">Excluir</button>
+    </div>
+</div>
